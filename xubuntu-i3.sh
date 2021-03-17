@@ -14,17 +14,17 @@ fi
 ##############################################
 
 echo " "
-    echo "INITIALIZE" && sleep 2
+    echo "INITIALIZE" && sleep 4
     apt install wget curl unzip zip apt-transport-https ca-certificates gnupg-agent software-properties-common -y
 echo " "
 
 echo " "
-    echo "ADDING GBG-KEYS TO SYSTEM" && sleep 2
+    echo "ADDING GBG-KEYS TO SYSTEM" && sleep 4
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 echo " "
 
 echo " "
-    echo "ADDING PERSONAL PACKAGE ARCHIVES" && sleep 2
+    echo "ADDING PERSONAL PACKAGE ARCHIVES" && sleep 4
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" -yn
     add-apt-repository ppa:linuxgndu/sqlitebrowser -yn
     add-apt-repository ppa:serge-rider/dbeaver-ce -yn
@@ -33,7 +33,7 @@ echo " "
 echo " "
 
 echo " "
-    echo "DOWNLOADING PACKAGES" && sleep 2
+    echo "DOWNLOADING PACKAGES" && sleep 4
     LATEST_MYSQL=$(curl -s https://dev.mysql.com/downloads/repo/apt/ | grep mysql-apt-config | cut -d'(' -f2 | cut -d')' -f1)
     cd /tmp && wget -q https://dev.mysql.com/get/$LATEST_MYSQL && apt install ./mysql-apt-config_*_all.deb -y
 
@@ -50,7 +50,7 @@ echo " "
     cp JetBrainsMono-*.ttf /usr/share/fonts/
 
     cd /tmp && wget https://getcomposer.org/installer && chmod 755 installer
-    php ./installer && mv composer.phar /usr/local/bin/composer
+    cd /tmp && php ./installer && mv composer.phar /usr/local/bin/composer
 
     cd /tmp && wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     cd /tmp && apt install ./google-chrome-stable_current_amd64.deb -y
@@ -61,7 +61,7 @@ echo " "
 echo " "
 
 echo " "
-    echo "INSTALLING SOFTWARE" && sleep 2
+    echo "INSTALLING SOFTWARE" && sleep 4
     apt-get install sqlitebrowser dbeaver-ce i3-wm zsh ssh zip sudo ufw gufw net-tools gimp thunderbird gparted synaptic neofetch nitrogen imagemagick libreoffice \
     compton arc-theme ayu-theme sqlite3 ubuntu-restricted-extras gnome-icon-theme xfce4-appmenu-plugin flatpak snapd nano git apache2 libsodium23 libpcre3 pwgen \
     php php-{bcmath,cli,common,curl,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip} libapache2-mod-php php-common php-imagick php-pear php-cgi php-phpseclib \
@@ -78,7 +78,7 @@ echo " "
 echo " "
 
 echo " "
-    echo "DOWNLOADING WALLPAPER" && sleep 2
+    echo "DOWNLOADING WALLPAPER" && sleep 4
     cd /usr/share/backgrounds
     wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg
     mv LEps6S.jpg linux-wallpaper-01.jpg
