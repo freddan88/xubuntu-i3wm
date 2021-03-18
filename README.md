@@ -21,7 +21,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ---
 
-For VM:s you should install the guest extensions and bellow
+For VM:s you should install the guest extensions and below software
 
 ```bash
 sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
