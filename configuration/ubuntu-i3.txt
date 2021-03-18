@@ -83,17 +83,10 @@ chmod +x installer && php ./installer
 sudo mv composer.phar /usr/local/bin/composer
 rm -f installer
 
-
 #############################################
-# USER
-
-# https://ohmyz.sh
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # https://github.com/nvm-sh/nvm (node och npm version control)
 cd /tmp && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-
 
 CONFIGURE:
 
