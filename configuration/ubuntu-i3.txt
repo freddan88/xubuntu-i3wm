@@ -10,7 +10,7 @@ sudo apt install slick-greeter i3 zsh git ssh zip wget curl nano sudo net-tools 
 sudo apt install imagemagick xdg-user-dirs xfce4-screenshooter xterm lxterminal numlockx xbacklight xarchiver compton exo-utils gimp thunderbird -y
 sudo apt install pcmanfm gparted lxappearance synaptic mousepad rofi neofetch nitrogen policykit-1 lxpolkit gvfs-backends lxpanel -y
 
-mate-power-manager iceweasel network-manager-gnome // Instalerar Gnome-desktop
+mate-power-manager iceweasel network-manager-gnome // Installerar Gnome-desktop
 
 ###############################
 
@@ -42,7 +42,6 @@ sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.i
 # Get latest version: https://github.com/docker/compose/releases
 cd /usr/bin && sudo wget https://github.com/docker/compose/releases/download/1.28.2/docker-compose-Linux-x86_64
 cd /usr/bin && sudo mv docker-compose-Linux-x86_64 docker-compose && sudo chmod 755 docker-compose
-sudo usermod -aG docker <your-username>
 
 LATEST_COMPOSE=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
 wget ${LATEST_COMPOSE/tag/download}/docker-compose-$(uname -s)-$(uname -m)
@@ -89,6 +88,9 @@ rm -f installer
 cd /tmp && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 CONFIGURE:
+
+// Add user to docker-group
+sudo usermod -aG docker <your-username>
 
 nano $HOME/.zshrc 
 - Add autosuggestions to plugins. Example: plugins=(git zsh-autosuggestions)
