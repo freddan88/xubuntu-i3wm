@@ -14,7 +14,7 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 1. Update and upgrade packages
 
 ```bash
-sudo apt update && sudo apt install zsh -y && sudo apt upgrade -y && sudo reboot
+sudo apt update && sudo apt install zsh git wget curl -y && sudo apt upgrade -y && sudo reboot
 ```
 
 2. Install OH MY ZSH and zsh-autosuggestions plugin
