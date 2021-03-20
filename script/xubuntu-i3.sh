@@ -24,19 +24,16 @@ echo " "
     # sed "s/v//g" <<< "v2.225"
 
     LATEST_MYSQL=$(curl -s https://dev.mysql.com/downloads/repo/apt/ | grep mysql-apt-config | cut -d'(' -f2 | cut -d')' -f1)
-    wget -q https://dev.mysql.com/get/$LATEST_MYSQL && apt install ./mysql-apt-config_*_all.deb -y
+    wget -q https://dev.mysql.com/get/$LATEST_MYSQL && apt install ./mysql-apt-config_*_all.deb -yqq > /dev/null
 
     URL_MONOFONT="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.225/JetBrainsMono-2.225.zip"
     wget -q $URL_MONOFONT && unzip -qqo JetBrainsMono*.zip && cd fonts/ttf && cp JetBrainsMono*.ttf /usr/share/fonts/
 
     URL_MONGODB_COMPASS="https://github.com/mongodb-js/compass/releases/download/v1.26.0/mongodb-compass_1.26.0_amd64.deb"
-    wget -q $URL_MONGODB_COMPASS && apt install ./mongodb-compass_*_amd64.deb -y
+    wget -q $URL_MONGODB_COMPASS && apt install ./mongodb-compass_*_amd64.deb -yqq > /dev/null
 
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    apt install ./google-chrome-stable_current_amd64.deb -y
-
-    wget -q https://getcomposer.org/installer && chmod 755 installer
-    php ./installer && mv composer.phar /usr/local/bin/composer
+    apt install ./google-chrome-stable_current_amd64.deb -yqq > /dev/null
 
     LATEST_COMPOSE=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
     LATEST_VERSION=$(echo $LATEST_COMPOSE | cut -d'/' -f8)
@@ -58,7 +55,10 @@ echo " "
     imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
     openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript net-tools docker-ce docker-ce-cli containerd.io \
     fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev curl wget fail2ban \
-    mysql-server mysql-client mysql-workbench-community libmysqlclient21 unzip zip -y
+    mysql-server mysql-client mysql-workbench-community libmysqlclient21 unzip zip -yqq > /dev/null
+
+    wget -q https://getcomposer.org/installer && chmod 755 installer
+    php ./installer && mv composer.phar /usr/local/bin/composer
 
     snap install spotify postman insomnia
     snap install code --classic
