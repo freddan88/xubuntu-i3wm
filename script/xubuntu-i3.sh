@@ -28,7 +28,7 @@ echo " "
     wget -q https://dev.mysql.com/get/$LATEST_MYSQL && apt install ./mysql-apt-config_*_all.deb -yqq
 
     URL_MONOFONT="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.225/JetBrainsMono-2.225.zip"
-    wget -q $URL_MONOFONT && unzip -qqo JetBrainsMono*.zip && cd fonts/ttf && cp JetBrainsMono*.ttf /usr/share/fonts/
+    wget -q $URL_MONOFONT && unzip -qqo JetBrainsMono*.zip && cp fonts/ttf/JetBrainsMono*.ttf /usr/share/fonts/
 
     URL_MONGODB_COMPASS="https://github.com/mongodb-js/compass/releases/download/v1.26.0/mongodb-compass_1.26.0_amd64.deb"
     wget -q $URL_MONGODB_COMPASS && apt install ./mongodb-compass_*_amd64.deb -yqq
@@ -52,7 +52,7 @@ echo " "
 
 echo " "
     echo "INSTALLING SOFTWARE" && sleep 4
-    apt-get install sqlitebrowser dbeaver-ce i3-wm ssh zip sudo ufw gufw net-tools gimp thunderbird gparted synaptic neofetch nitrogen imagemagick libreoffice \
+    apt-get install sqlitebrowser dbeaver-ce i3-wm ssh zip sudo ufw gufw net-tools gimp thunderbird gparted synaptic neofetch nitrogen libreoffice \
     compton arc-theme ayu-theme sqlite3 ubuntu-restricted-extras gnome-icon-theme xfce4-appmenu-plugin flatpak snapd nano apache2 libsodium23 libpcre3 pwgen \
     php php-{bcmath,cli,common,curl,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php unzip zip imagemagick \
     imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
