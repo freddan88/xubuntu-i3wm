@@ -13,11 +13,12 @@ fi
 
 echo " "
     echo "INITIALIZE" && sleep 4
-    apt install apt-transport-https ca-certificates gnupg-agent software-properties-common -yqq
+    apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common lsb-release -yqq
 
 echo " "
     echo "ADDING GBG-KEYS TO SYSTEM" && sleep 4
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+    # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 echo " "
     echo "ADDING PERSONAL PACKAGE ARCHIVES" && sleep 4
@@ -41,7 +42,9 @@ echo " "
     wget -q https://github.com/docker/compose/releases/download/$LATEST_VERSION/docker-compose-Linux-x86_64
     mv docker-compose-Linux-x86_64 docker-compose && chmod 755 docker-compose
 
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -c  s) stable" -yn
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
     add-apt-repository ppa:linuxgndu/sqlitebrowser -yn
     add-apt-repository ppa:serge-rider/dbeaver-ce -yn
     add-apt-repository ppa:regolith-linux/stable -yn
