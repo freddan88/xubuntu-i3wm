@@ -7,13 +7,14 @@ NOT COMPLETE!!!
 For VM:s you should install the guest extensions and below software
 
 ```bash
+sudo apt update && sudo apt upgrade -y && sudo reboot
 sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 ```
 
 1. Update and upgrade packages
 
 ```bash
-sudo apt update && sudo apt install zsh -y && sudo apt upgrade -y
+sudo apt update && sudo apt install zsh -y && sudo apt upgrade -y && sudo reboot
 ```
 
 2. Install OH MY ZSH and zsh-autosuggestions plugin
@@ -22,8 +23,6 @@ sudo apt update && sudo apt install zsh -y && sudo apt upgrade -y
 cd && sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
-
-### REBOOT YOUR COMPUTER
 
 ---
 
