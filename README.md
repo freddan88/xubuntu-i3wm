@@ -13,7 +13,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 ```
 
-1. Update and upgrade packages
+1. Update, install some dependencies and upgrade packages
 
 ```bash
 sudo apt update && sudo apt install zsh git wget curl -y && sudo apt upgrade -y
