@@ -21,7 +21,30 @@ echo " "
 
 echo " "
     echo "ADDING PERSONAL PACKAGE ARCHIVES" && sleep 4
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" -yn
+    # sed "s/v//g" <<< "v2.225"
+
+    LATEST_MYSQL=$(curl -s https://dev.mysql.com/downloads/repo/apt/ | grep mysql-apt-config | cut -d'(' -f2 | cut -d')' -f1)
+    wget -q https://dev.mysql.com/get/$LATEST_MYSQL && apt install ./mysql-apt-config_*_all.deb -y
+
+    URL_MONOFONT="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.225/JetBrainsMono-2.225.zip"
+    wget -q $URL_MONOFONT && unzip -qqo JetBrainsMono*.zip && cd fonts/ttf && cp JetBrainsMono*.ttf /usr/share/fonts/
+
+    URL_MONGODB_COMPASS="https://github.com/mongodb-js/compass/releases/download/v1.26.0/mongodb-compass_1.26.0_amd64.deb"
+    wget -q $URL && apt install ./mongodb-compass_*_amd64.deb -y
+
+    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    apt install ./google-chrome-stable_current_amd64.deb -y
+
+    wget -q https://getcomposer.org/installer && chmod 755 installer
+    php ./installer && mv composer.phar /usr/local/bin/composer
+
+    LATEST_COMPOSE=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
+    LATEST_VERSION=$(echo $LATEST_COMPOSE | cut -d'/' -f8)
+
+    wget -q https://github.com/docker/compose/releases/download/$LATEST_VERSION/docker-compose-Linux-x86_64
+    mv docker-compose-Linux-x86_64 docker-compose && chmod 755 docker-compose
+
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -c  s) stable" -yn
     add-apt-repository ppa:linuxgndu/sqlitebrowser -yn
     add-apt-repository ppa:serge-rider/dbeaver-ce -yn
     add-apt-repository ppa:regolith-linux/stable -yn
@@ -37,35 +60,11 @@ echo " "
     fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev curl wget fail2ban \
     mysql-server mysql-client mysql-workbench-community libmysqlclient21 unzip zip -y
 
-    snap install code --classic
     snap install spotify postman insomnia
+    snap install code --classic
     
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak install flathub com.github.alecaddd.sequeler
-
-echo " "
-    echo "DOWNLOADING PACKAGES" && sleep 4
-    # sed "s/v//g" <<< "v2.225"
-
-    URL_MONOFONT="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.225/JetBrainsMono-2.225.zip"
-    wget -q $URL_MONOFONT && unzip -qqo JetBrainsMono*.zip && cd fonts/ttf && cp JetBrainsMono*.ttf /usr/share/fonts/
-
-    URL_MONGODB_COMPASS="https://github.com/mongodb-js/compass/releases/download/v1.26.0/mongodb-compass_1.26.0_amd64.deb"
-    wget -q $URL && apt install ./mongodb-compass_*_amd64.deb -y
-
-    LATEST_MYSQL=$(curl -s https://dev.mysql.com/downloads/repo/apt/ | grep mysql-apt-config | cut -d'(' -f2 | cut -d')' -f1)
-    wget -q https://dev.mysql.com/get/$LATEST_MYSQL && apt install ./mysql-apt-config_*_all.deb -y
-    
-    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    apt install ./google-chrome-stable_current_amd64.deb -y
-
-    wget -q https://getcomposer.org/installer && chmod 755 installer
-    php ./installer && mv composer.phar /usr/local/bin/composer
-
-    LATEST_COMPOSE=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
-    LATEST_VERSION=$(echo $LATEST_COMPOSE | cut -d'/' -f8)
-    wget -q https://github.com/docker/compose/releases/download/$LATEST_VERSION/docker-compose-Linux-x86_64
-    mv docker-compose-Linux-x86_64 docker-compose && chmod 755 docker-compose
 
 echo " "
     echo "DOWNLOADING WALLPAPER" && sleep 4
