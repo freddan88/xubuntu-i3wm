@@ -30,7 +30,7 @@ echo " "
     wget -q $URL_MONOFONT && unzip -qqo JetBrainsMono*.zip && cd fonts/ttf && cp JetBrainsMono*.ttf /usr/share/fonts/
 
     URL_MONGODB_COMPASS="https://github.com/mongodb-js/compass/releases/download/v1.26.0/mongodb-compass_1.26.0_amd64.deb"
-    wget -q $URL && apt install ./mongodb-compass_*_amd64.deb -y
+    wget -q $URL_MONGODB_COMPASS && apt install ./mongodb-compass_*_amd64.deb -y
 
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     apt install ./google-chrome-stable_current_amd64.deb -y
