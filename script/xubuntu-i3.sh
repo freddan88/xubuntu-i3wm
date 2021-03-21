@@ -58,7 +58,7 @@ echo " "
     imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
     openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript net-tools docker-ce docker-ce-cli containerd.io \
     fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev curl wget fail2ban \
-    mysql-server mysql-client mysql-workbench-community libmysqlclient21 -yqq
+    mysql-server mysql-client mysql-workbench-community libmysqlclient21 gedit rofi -yqq
 
     wget -q https://getcomposer.org/installer && chmod 755 installer
     php ./installer && mv composer.phar /usr/local/bin/composer
@@ -74,6 +74,21 @@ echo " "
     cd /usr/share/backgrounds
     wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg
     mv LEps6S.jpg linux-wallpaper-01.jpg
+
+echo " "
+    echo "ADDING VARIABLES TO ZSHRC" && sleep 4
+    sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions)/g' $HOME/.zshrc
+
+    echo >> $HOME/.zshrc
+    echo 'export NVM_DIR="$HOME/.nvm"' >> $HOME/.zshrc
+    echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> $HOME/.zshrc
+    echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> $HOME/.zshrc
+    
+    echo >> $HOME/.zshrc
+    echo 'echo ""' >> $HOME/.zshrc
+    echo 'neofetch' >> $HOME/.zshrc
+    echo 'cat /etc/lsb-release' >> $HOME/.zshrc
+    echo 'echo ""' >> $HOME/.zshrc
 
 echo " "
 exit

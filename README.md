@@ -13,6 +13,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 ```
 
+---
+
 1. Update, install some dependencies and upgrade packages
 
 ```bash
@@ -26,9 +28,13 @@ cd && sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
----
+3. Install the latest version of nvm (Node Version Manager)
 
-3. Download and run the script to install all software that we are going to need
+```bash
+cd && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+```
+
+4. Download and run the script to install all software that we are going to need
 
 ```bash
 mkdir -p /tmp/i3xc && cd /tmp/i3xc
@@ -38,5 +44,6 @@ sudo chmod 755 xubuntu-i3.sh  && sudo ./xubuntu-i3.sh
 
 Resources:
 
+- [Node Version Manager](https://github.com/nvm-sh/nvm)
 - [Oh My Zsh - open source framework for zsh](https://ohmyz.sh)
 - [Oh my zsh with autosuggestions & syntax-highlighting](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
