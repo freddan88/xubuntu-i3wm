@@ -12,14 +12,14 @@
 # VARIABLES
 # ---------
 
-set $wp1 "1"
-set $wp2 "2"
-set $wp3 "3"
-set $wp4 "4"
-set $wp5 "5"
-set $wp6 "6"
-set $wp7 "7"
-set $wp8 "8"
+set $wp1 "Workspace 1"
+set $wp2 "Workspace 2"
+set $wp3 "Workspace 3"
+set $wp4 "Workspace 4"
+set $wp5 "Workspace 5"
+set $wp6 "Workspace 6"
+set $wp7 "Workspace 7"
+set $wp8 "Workspace 8"
 
 # Mod4 = Windows or super key
 # Mod1 = Left Alt-key
@@ -78,6 +78,7 @@ bindsym $mod+space exec --no-startup-id xfce4-appfinder
 
 bindsym $mod+m exec --no-startup-id synaptic-pkexec
 bindsym $mod+a exec --no-startup-id xfce4-settings-manager
+bindsym $mod+d exec --no-startup-id xfce4-display-settings
 
 bindsym $mod+s exec --no-startup-id xfce4-screenshooter
 bindsym $mod+f exec --no-startup-id thunar
