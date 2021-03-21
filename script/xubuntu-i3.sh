@@ -13,13 +13,14 @@ fi
 
 echo " "
     echo "INITIALIZE" && sleep 4
-    apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common lsb-release -yqq
+    apt install apt-transport-https ca-certificates curl wget gnupg-agent software-properties-common lsb-release -yqq
 
 echo " "
     echo "ADDING KEYS TO SYSTEM" && sleep 4
     # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
     curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+    wget -O - -q http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add -
 
 echo " "
     echo "ADDING PERSONAL PACKAGE ARCHIVES" && sleep 4
@@ -47,6 +48,7 @@ echo " "
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
+    add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main" -yn
     add-apt-repository ppa:linuxgndu/sqlitebrowser -yn
     add-apt-repository ppa:serge-rider/dbeaver-ce -yn
     add-apt-repository ppa:regolith-linux/stable -yn
@@ -60,7 +62,7 @@ echo " "
     imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
     openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript net-tools docker-ce docker-ce-cli containerd.io \
     fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev fail2ban gedit rofi \
-    mysql-server mysql-client mysql-workbench-community libmysqlclient21 spotify-client -yqq
+    mysql-server mysql-client mysql-workbench-community libmysqlclient21 spotify-client tableplus -yqq
 
     wget -q https://getcomposer.org/installer && chmod 755 installer
     php ./installer && mv composer.phar /usr/local/bin/composer
