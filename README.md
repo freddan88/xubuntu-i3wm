@@ -45,5 +45,6 @@ sudo chmod 755 xubuntu-i3.sh  && sudo ./xubuntu-i3.sh
 Resources:
 
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
-- [Oh My Zsh - open source framework for zsh](https://ohmyz.sh)
-- [Oh my zsh with autosuggestions & syntax-highlighting](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
+- [OH MY ZSH - open source framework for zsh](https://ohmyz.sh)
+- [OH MY ZSH with autosuggestions & syntax-highlighting](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
+- [PHP Xdebug installation and configuration](https://dieuwe.com/blog/install-xdebug-ubuntu)

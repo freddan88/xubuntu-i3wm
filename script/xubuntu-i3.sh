@@ -54,13 +54,13 @@ echo " "
 
 echo " "
     echo "INSTALLING SOFTWARE" && sleep 4
-    apt-get install sqlitebrowser dbeaver-ce i3-wm ssh zip sudo ufw gufw net-tools gimp thunderbird gparted synaptic neofetch nitrogen libreoffice \
+    apt-get install sqlitebrowser dbeaver-ce i3-wm ssh zip sudo ufw gufw net-tools gimp thunderbird gparted synaptic neofetch nitrogen libreoffice curl wget \
     compton arc-theme ayu-theme sqlite3 ubuntu-restricted-extras gnome-icon-theme xfce4-appmenu-plugin flatpak snapd nano apache2 libsodium23 libpcre3 pwgen \
-    php php-{bcmath,cli,common,curl,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php unzip zip imagemagick \
-    imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
+    php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php unzip zip \
+    imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
     openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript net-tools docker-ce docker-ce-cli containerd.io \
-    fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev curl wget fail2ban \
-    mysql-server mysql-client mysql-workbench-community libmysqlclient21 gedit rofi spotify-client -yqq
+    fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev fail2ban gedit rofi \
+    mysql-server mysql-client mysql-workbench-community libmysqlclient21 spotify-client -yqq
 
     wget -q https://getcomposer.org/installer && chmod 755 installer
     php ./installer && mv composer.phar /usr/local/bin/composer
@@ -74,7 +74,7 @@ echo " "
 echo " "
     echo "DOWNLOADING WALLPAPER" && sleep 4
     cd /usr/share/backgrounds
-    
+
     wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg
     mv LEps6S.jpg linux-wallpaper-01.jpg
 
