@@ -74,7 +74,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+v exec --no-startup-id catfish
-bindsym $mod+Space exec --no-startup-id xfce4-appfinder
+bindsym $mod+space exec --no-startup-id xfce4-appfinder
 
 bindsym $mod+m exec --no-startup-id synaptic-pkexec
 bindsym $mod+a exec --no-startup-id xfce4-settings-manager
@@ -150,7 +150,7 @@ bindsym $mod+$alt+d layout splith
 bindsym $mod+$alt+Return floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+$alt+Space focus mode_toggle
+bindsym $mod+$alt+space focus mode_toggle
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
