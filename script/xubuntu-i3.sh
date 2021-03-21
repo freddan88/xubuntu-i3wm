@@ -49,6 +49,7 @@ echo " "
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
     add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main" -yn
+    sudo add-apt-repository ppa:oguzhaninan/stacer -yn
     add-apt-repository ppa:linuxgndu/sqlitebrowser -yn
     add-apt-repository ppa:serge-rider/dbeaver-ce -yn
     add-apt-repository ppa:regolith-linux/stable -yn
@@ -62,7 +63,7 @@ echo " "
     imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
     openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript net-tools docker-ce docker-ce-cli containerd.io \
     fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev fail2ban gedit rofi \
-    mysql-server mysql-client mysql-workbench-community libmysqlclient21 spotify-client tableplus -yqq
+    mysql-server mysql-client mysql-workbench-community libmysqlclient21 spotify-client tableplus vlc stacer -yqq
 
     wget -q https://getcomposer.org/installer && chmod 755 installer
     php ./installer && mv composer.phar /usr/local/bin/composer

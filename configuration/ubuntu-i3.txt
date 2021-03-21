@@ -106,5 +106,5 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 REBOOT YOUR PC
 
-- Install lates LTS release of npm and node.js
+- Install latest LTS release of npm and node.js
 nvm install --lts

@@ -85,6 +85,8 @@ bindsym $mod+d exec --no-startup-id xfce4-display-settings
 bindsym $mod+e exec --no-startup-id gufw
 bindsym $mod+f exec --no-startup-id thunar
 bindsym $mod+s exec --no-startup-id xfce4-screenshooter
+bindsym $mod+g exec --no-startup-id gparted
+bindsym $mod+h exec --no-startup-id stacer
 
 bindsym $mod+c exec --no-startup-id rofi -show run
 bindsym $mod+z exec --no-startup-id rofi -show ssh
