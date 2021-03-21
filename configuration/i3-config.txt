@@ -79,6 +79,7 @@ bindsym $mod+space exec --no-startup-id xfce4-appfinder
 
 bindsym $mod+m exec --no-startup-id synaptic-pkexec
 bindsym $mod+a exec --no-startup-id xfce4-settings-manager
+bindsym $mod+b exec --no-startup-id google-chrome
 bindsym $mod+d exec --no-startup-id xfce4-display-settings
 
 bindsym $mod+f exec --no-startup-id thunar
