@@ -74,6 +74,7 @@ echo " "
 echo " "
     echo "DOWNLOADING WALLPAPER" && sleep 4
     cd /usr/share/backgrounds
+    
     wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg
     mv LEps6S.jpg linux-wallpaper-01.jpg
 

@@ -81,27 +81,27 @@ bindsym $mod+m exec --no-startup-id synaptic-pkexec
 bindsym $mod+a exec --no-startup-id xfce4-settings-manager
 bindsym $mod+d exec --no-startup-id xfce4-display-settings
 
-bindsym $mod+s exec --no-startup-id xfce4-screenshooter
 bindsym $mod+f exec --no-startup-id thunar
+bindsym $mod+s exec --no-startup-id xfce4-screenshooter
 
-bindsym $mod+c exec --no-startup-id rofi -show run
 bindsym $mod+x exec --no-startup-id rofi -show window
+bindsym $mod+c exec --no-startup-id rofi -show run
 bindsym $mod+z exec --no-startup-id rofi -show ssh
 
 # kill focused window
 bindsym $mod+q kill
 
 # change focus
+bindsym $mod+l focus right
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+i focus up
-bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
+bindsym $mod+Right focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # switch to workspace
 bindsym $mod+1 workspace $wp1
@@ -118,12 +118,10 @@ bindsym $mod+8 workspace $wp8
 # -----------------------------------
 
 # split in horizontal orientation
-bindsym $mod+$alt+8 split h
-bindsym $mod+$alt+2 split h
+bindsym $mod+$alt+h split h
 
 # split in vertical orientation
-bindsym $mod+$alt+4 split v
-bindsym $mod+$alt+6 split v
+bindsym $mod+$alt+v split v
 
 # move focused window
 bindsym $mod+$alt+i move right
@@ -140,19 +138,18 @@ bindsym $mod+$alt+Up move up
 # enter fullscreen mode for the focused container
 bindsym $mod+$alt+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split, splith, splitv)
-bindsym $mod+$alt+q layout toggle
-bindsym $mod+$alt+e layout stacking
+# change container layout (stacked, tabbed, toggle, splith, splitv)
+bindsym $mod+$alt+Return layout toggle
+bindsym $mod+$alt+s layout stacking
 bindsym $mod+$alt+w layout tabbed
-bindsym $mod+$alt+s layout split
 bindsym $mod+$alt+a layout splitv
 bindsym $mod+$alt+d layout splith
 
 # toggle tiling / floating
-bindsym $mod+$alt+Return floating toggle
+bindsym $mod+$alt+q floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+$alt+space focus mode_toggle
+bindsym $mod+$alt+e focus mode_toggle
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -184,7 +181,7 @@ bindsym $mod+$alt+r mode "resize"
 # KEYBINDINGS USING: Super + Left Ctrl
 # ------------------------------------
 
-# Cycle through workspaces
+# Cycle through active workspaces
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
