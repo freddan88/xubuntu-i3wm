@@ -82,6 +82,7 @@ bindsym $mod+a exec --no-startup-id xfce4-settings-manager
 bindsym $mod+b exec --no-startup-id google-chrome
 bindsym $mod+d exec --no-startup-id xfce4-display-settings
 
+bindsym $mod+e exec --no-startup-id gufw
 bindsym $mod+f exec --no-startup-id thunar
 bindsym $mod+s exec --no-startup-id xfce4-screenshooter
 
