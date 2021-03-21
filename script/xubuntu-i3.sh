@@ -16,9 +16,10 @@ echo " "
     apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common lsb-release -yqq
 
 echo " "
-    echo "ADDING GBG-KEYS TO SYSTEM" && sleep 4
+    echo "ADDING KEYS TO SYSTEM" && sleep 4
     # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 
 echo " "
     echo "ADDING PERSONAL PACKAGE ARCHIVES" && sleep 4
@@ -42,6 +43,7 @@ echo " "
     wget -q https://github.com/docker/compose/releases/download/$LATEST_VERSION/docker-compose-Linux-x86_64
     mv docker-compose-Linux-x86_64 docker-compose && chmod 755 docker-compose
 
+    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
@@ -58,12 +60,12 @@ echo " "
     imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
     openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript net-tools docker-ce docker-ce-cli containerd.io \
     fonts-ubuntu-font-family-console ttf-ubuntu-font-family python3 python3-pip build-essential libssl-dev libffi-dev python3-dev curl wget fail2ban \
-    mysql-server mysql-client mysql-workbench-community libmysqlclient21 gedit rofi -yqq
+    mysql-server mysql-client mysql-workbench-community libmysqlclient21 gedit rofi spotify-client -yqq
 
     wget -q https://getcomposer.org/installer && chmod 755 installer
     php ./installer && mv composer.phar /usr/local/bin/composer
 
-    snap install spotify postman insomnia
+    snap install postman insomnia
     snap install code --classic
     
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -94,5 +96,8 @@ echo " "
     echo "UPDATING I3 CONFIGURATION" && sleep 4
     I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
     echo $I3_CONFIG > $HOME/.config/i3/config
+
+echo " "
+    apt update -qq && apt upgrade -yqq && apt autoremove -yqq
 
 exit
