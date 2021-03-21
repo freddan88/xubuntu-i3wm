@@ -91,4 +91,8 @@ echo " "
     echo 'echo ""' >> $HOME/.zshrc
 
 echo " "
+    echo "UPDATING I3 CONFIGURATION" && sleep 4
+    I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
+    echo $I3_CONFIG > $HOME/.config/i3/config
+
 exit

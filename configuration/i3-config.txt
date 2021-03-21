@@ -116,12 +116,24 @@ bindsym $mod+8 move container to workspace $wp8
 # -----------------------------------
 
 # split in horizontal orientation
-bindsym $mod+$alt+Up split h
-bindsym $mod+$alt+Down split h
+bindsym $mod+$alt+8 split h
+bindsym $mod+$alt+2 split h
 
 # split in vertical orientation
-bindsym $mod+$alt+Left split v
-bindsym $mod+$alt+Right split v
+bindsym $mod+$alt+4 split v
+bindsym $mod+$alt+6 split v
+
+# move focused window
+bindsym $mod+$alt+i move right
+bindsym $mod+$alt+j move left
+bindsym $mod+$alt+k move down
+bindsym $mod+$alt+l move up
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+$alt+Right move right
+bindsym $mod+$alt+Left move left
+bindsym $mod+$alt+Down move down
+bindsym $mod+$alt+Up move up
 
 # enter fullscreen mode for the focused container
 bindsym $mod+$alt+f fullscreen toggle
@@ -182,18 +194,6 @@ bindsym $mod+Ctrl+5 workspace $wp5
 bindsym $mod+Ctrl+6 workspace $wp6
 bindsym $mod+Ctrl+7 workspace $wp7
 bindsym $mod+Ctrl+8 workspace $wp8
-
-# move focused window
-bindsym $mod+Ctrl+i move right
-bindsym $mod+Ctrl+j move left
-bindsym $mod+Ctrl+k move down
-bindsym $mod+Ctrl+l move up
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Ctrl+Right move right
-bindsym $mod+Ctrl+Left move left
-bindsym $mod+Ctrl+Down move down
-bindsym $mod+Ctrl+Up move up
 
 # focus the parent container
 bindsym $mod+Ctrl+Up focus parent
