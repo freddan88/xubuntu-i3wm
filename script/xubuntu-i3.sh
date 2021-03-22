@@ -17,15 +17,15 @@ case "$1" in
 update_i3 () {
 echo " "
     echo "UPDATING I3 CONFIGURATION" && sleep 4
-    I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
+    I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configurations/i3-config.txt)
     echo $I3_CONFIG > $HOME/.config/i3/config
 }
 
 update_zsh () {
 echo " "
     echo "UPDATING ZSH CONFIGURATION" && sleep 4
-    # ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
-    # echo $ZSH_CONFIG > $HOME/.config/i3/config
+    ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configurations/zshrc.txt)
+    echo $ZSH_CONFIG > $HOME/.zshrc
 }
 
 install)
@@ -102,20 +102,6 @@ echo " "
     mv LEps6S.jpg linux-wallpaper-01.jpg
 
 echo " "
-    echo "ADDING VARIABLES TO ZSHRC" && sleep 4
-    sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions)/g' $HOME/.zshrc
-
-    echo >> $HOME/.zshrc
-    echo 'export NVM_DIR="$HOME/.nvm"' >> $HOME/.zshrc
-    echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> $HOME/.zshrc
-    echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> $HOME/.zshrc
-    
-    echo >> $HOME/.zshrc
-    echo 'echo ""' >> $HOME/.zshrc
-    echo 'neofetch' >> $HOME/.zshrc
-    echo 'cat /etc/lsb-release' >> $HOME/.zshrc
-    echo 'echo ""' >> $HOME/.zshrc
-
     usermod -aG docker $USERNAME
     update_zsh
     update_i3

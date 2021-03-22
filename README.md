@@ -47,7 +47,7 @@ sudo chmod 755 xubuntu-i3.sh  && sudo ./xubuntu-i3.sh
 6. Install the latest LTS-release on node.js and npm
 
 ```bash
-nvm install --lts
+cd && nvm install --lts
 ```
 
 Resources:
