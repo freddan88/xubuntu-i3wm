@@ -141,6 +141,7 @@ echo " "
 *)
 echo " "
 	echo "Usage: install|update_i3-config|update_zsh-config|update_all-configs"
+echo " "
 ;;
 
 esac
