@@ -41,7 +41,7 @@ for_window [class="^.*"] border pixel 1
 # Start program on predefined workspace
 # assign [class="Google-chrome"] $wp3
 # assign [class="Postman"] $wp4
-# assign [class="Code"] $wp2
+assign [class="Code"] $wp2
 
 # thin borders
 hide_edge_borders both
@@ -77,20 +77,18 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+v exec --no-startup-id catfish
 bindsym $mod+space exec --no-startup-id xfce4-appfinder
 
-bindsym $mod+b exec --no-startup-id google-chrome
 bindsym $mod+m exec --no-startup-id synaptic-pkexec
 bindsym $mod+a exec --no-startup-id xfce4-settings-manager
+bindsym $mod+b exec --no-startup-id google-chrome
 bindsym $mod+d exec --no-startup-id xfce4-display-settings
 
 bindsym $mod+e exec --no-startup-id gufw
 bindsym $mod+f exec --no-startup-id thunar
 bindsym $mod+s exec --no-startup-id xfce4-screenshooter
-bindsym $mod+g exec --no-startup-id gparted
-bindsym $mod+h exec --no-startup-id stacer
 
+bindsym $mod+x exec --no-startup-id rofi -show window
 bindsym $mod+c exec --no-startup-id rofi -show run
 bindsym $mod+z exec --no-startup-id rofi -show ssh
-bindsym $mod+x exec --no-startup-id rofi -show window
 
 # kill focused window
 bindsym $mod+q kill
@@ -139,21 +137,51 @@ bindsym $mod+$alt+Left move left
 bindsym $mod+$alt+Down move down
 bindsym $mod+$alt+Up move up
 
+# ------------------------------------
+# KEYBINDINGS USING: Super + Left Ctrl
+# ------------------------------------
+
+# Cycle through active workspaces
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+# focus the parent container
+bindsym $mod+Ctrl+Up focus parent
+
+# focus the child container
+#bindsym $mod+Ctrl+Down focus child
+
+# reload the configuration file
+bindsym $mod+Ctrl+9 reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Ctrl+0 restart
+
+# move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $wp1
+bindsym $mod+Ctrl+2 move container to workspace $wp2
+bindsym $mod+Ctrl+3 move container to workspace $wp3
+bindsym $mod+Ctrl+4 move container to workspace $wp4
+bindsym $mod+Ctrl+5 move container to workspace $wp5
+bindsym $mod+Ctrl+6 move container to workspace $wp6
+bindsym $mod+Ctrl+7 move container to workspace $wp7
+bindsym $mod+Ctrl+8 move container to workspace $wp8
+
 # enter fullscreen mode for the focused container
-bindsym $mod+$alt+f fullscreen toggle
+bindsym $mod+Ctrl+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle, splith, splitv)
-bindsym $mod+$alt+Return layout toggle
-bindsym $mod+$alt+s layout stacking
-bindsym $mod+$alt+w layout tabbed
-bindsym $mod+$alt+a layout splitv
-bindsym $mod+$alt+d layout splith
+bindsym $mod+Ctrl+Return layout toggle
+bindsym $mod+Ctrl+s layout stacking
+bindsym $mod+Ctrl+w layout tabbed
+bindsym $mod+Ctrl+a layout splitv
+bindsym $mod+Ctrl+d layout splith
 
 # toggle tiling / floating
-bindsym $mod+$alt+q floating toggle
+bindsym $mod+Ctrl+q floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+$alt+e focus mode_toggle
+bindsym $mod+Ctrl+e focus mode_toggle
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -179,37 +207,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+$alt+r mode "resize"
-
-# ------------------------------------
-# KEYBINDINGS USING: Super + Left Ctrl
-# ------------------------------------
-
-# Cycle through active workspaces
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-
-# move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $wp1
-bindsym $mod+Ctrl+2 move container to workspace $wp2
-bindsym $mod+Ctrl+3 move container to workspace $wp3
-bindsym $mod+Ctrl+4 move container to workspace $wp4
-bindsym $mod+Ctrl+5 move container to workspace $wp5
-bindsym $mod+Ctrl+6 move container to workspace $wp6
-bindsym $mod+Ctrl+7 move container to workspace $wp7
-bindsym $mod+Ctrl+8 move container to workspace $wp8
-
-# focus the parent container
-bindsym $mod+Ctrl+Up focus parent
-
-# focus the child container
-#bindsym $mod+Ctrl+Down focus child
-
-# reload the configuration file
-bindsym $mod+Ctrl+0 reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+Return restart
+bindsym $mod+Ctrl+r mode "resize"
 
 # ----------------
 # SPECIAL BINDINGS
