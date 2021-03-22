@@ -11,6 +11,22 @@ if [ "$(id -u)" != "0" ]; then
 	exit
 fi
 
+############
+case "$1" in
+
+update_i3 () {
+    echo "UPDATING I3 CONFIGURATION" && sleep 4
+    I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
+    echo $I3_CONFIG > $HOME/.config/i3/config
+}
+
+update_zsh () {
+    echo "UPDATING ZSH CONFIGURATION" && sleep 4
+    # ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
+    # echo $ZSH_CONFIG > $HOME/.config/i3/config
+}
+
+install)
 echo " "
     echo "INITIALIZE" && sleep 4
     apt install apt-transport-https ca-certificates curl wget gnupg-agent software-properties-common lsb-release -yqq
@@ -74,6 +90,8 @@ echo " "
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak install flathub com.github.alecaddd.sequeler
 
+    apt update -qq && apt upgrade -yqq && apt autoremove -yqq
+
 echo " "
     echo "DOWNLOADING WALLPAPER" && sleep 4
     cd /usr/share/backgrounds
@@ -96,12 +114,34 @@ echo " "
     echo 'cat /etc/lsb-release' >> $HOME/.zshrc
     echo 'echo ""' >> $HOME/.zshrc
 
+    update_zsh
+    update_i3
 echo " "
-    echo "UPDATING I3 CONFIGURATION" && sleep 4
-    I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
-    echo $I3_CONFIG > $HOME/.config/i3/config
+;;
 
+update_i3-config)
 echo " "
-    apt update -qq && apt upgrade -yqq && apt autoremove -yqq
+    update_i3
+echo " "
+;;
 
+update_zsh-config)
+echo " "
+    update_zsh
+echo " "
+;;
+
+update_all-configs)
+echo " "
+    update_zsh
+    update_i3
+echo " "
+;;
+
+*)
+echo " "
+	echo "Usage: install|update_i3-config|update_zsh-config|update_all-configs"
+;;
+
+esac
 exit
