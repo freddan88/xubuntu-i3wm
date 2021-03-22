@@ -28,7 +28,7 @@ cd && sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-3. Install the latest version of nvm (Node Version Manager)
+3. Download the latest version of nvm (Node Version Manager)
 
 ```bash
 cd && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
@@ -40,6 +40,14 @@ cd && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh |
 mkdir -p /tmp/i3xc && cd /tmp/i3xc
 wget https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/script/xubuntu-i3.sh
 sudo chmod 755 xubuntu-i3.sh  && sudo ./xubuntu-i3.sh
+```
+
+5. REBOOT YOUR COMPUTER OR LOG IN AND OUT!!!
+
+6. Install the latest LTS-release on node.js and npm
+
+```bash
+nvm install --lts
 ```
 
 Resources:

@@ -116,6 +116,7 @@ echo " "
     echo 'cat /etc/lsb-release' >> $HOME/.zshrc
     echo 'echo ""' >> $HOME/.zshrc
 
+    usermod -aG docker $USERNAME
     update_zsh
     update_i3
 echo " "
