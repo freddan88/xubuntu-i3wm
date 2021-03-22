@@ -15,12 +15,14 @@ fi
 case "$1" in
 
 update_i3 () {
+echo " "
     echo "UPDATING I3 CONFIGURATION" && sleep 4
     I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
     echo $I3_CONFIG > $HOME/.config/i3/config
 }
 
 update_zsh () {
+echo " "
     echo "UPDATING ZSH CONFIGURATION" && sleep 4
     # ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/xubuntu-i3wm/main/configuration/i3-config.txt)
     # echo $ZSH_CONFIG > $HOME/.config/i3/config
@@ -120,19 +122,16 @@ echo " "
 ;;
 
 update_i3-config)
-echo " "
     update_i3
 echo " "
 ;;
 
 update_zsh-config)
-echo " "
     update_zsh
 echo " "
 ;;
 
 update_all-configs)
-echo " "
     update_zsh
     update_i3
 echo " "
