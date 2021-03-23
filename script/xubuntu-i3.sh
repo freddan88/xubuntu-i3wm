@@ -35,7 +35,6 @@ echo " "
 
 echo " "
     echo "ADDING KEYS TO SYSTEM" && sleep 4
-    # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
     curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
     wget -O - -q http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add -
