@@ -32,6 +32,7 @@ set $alt Mod1
 # ----------------------
 
 exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id xfce4-terminal
 
 # Use xprop in terminal to find window classes
 for_window [class="Xfce4-appfinder"] floating enable´
