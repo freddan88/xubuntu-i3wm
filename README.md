@@ -2,9 +2,7 @@
 
 > Guide to install xubuntu with tools/software and the i3 tiling window manager
 
-#### My main goal with this build is to have a easy to use developer linux desktop
-
-#### And also to have as much screen estate for programs as possible...
+#### My main goal with this build is to have a easy to use developer linux desktop<br/>And also to have as much screen estate for programs as possible...
 
 ### NOT COMPLETE!!!
 
