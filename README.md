@@ -2,9 +2,11 @@
 
 > Guide to install xubuntu with tools/software and the i3 tiling window manager
 
-My main goal with this build is to have a easy to use developer linux desktop with as much screen estate for programs as possible!
+#### My main goal with this build is to have a easy to use developer linux desktop
 
-## NOT COMPLETE!!!
+#### And also to have as much screen estate for programs as possible...
+
+### NOT COMPLETE!!!
 
 | My Links: |                                                               |
 | --------- | ------------------------------------------------------------- |
@@ -17,7 +19,7 @@ My main goal with this build is to have a easy to use developer linux desktop wi
 
 - [Xubuntu 20.04 64Bit](http://ftp.lysator.liu.se/ubuntu-dvd/xubuntu/releases/20.04/release)
 
-For VM:s you should install the guest extensions and below software
+#### For VM:s you should install the guest extensions and below software
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -27,6 +29,8 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 > OBS! Reboot your computer after upgrading to load new Linux-kernels
 
 ---
+
+### Installation
 
 1. Update, install some dependencies and upgrade packages
 
@@ -69,10 +73,11 @@ cd && nvm install --lts
 | Code IDE Editor     | visual studio code (vsCode)                                           |
 | API-Testing         | postman, insomnia                                                     |
 
-- For more software please read script:
-  > https://github.com/freddan88/xubuntu-i3wm/blob/main/script/xubuntu-i3.sh
+#### For more software please read script:
 
-Resources:
+https://github.com/freddan88/xubuntu-i3wm/blob/main/script/xubuntu-i3.sh
+
+### Resources:
 
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
 - [OH MY ZSH - open source framework for zsh](https://ohmyz.sh)
